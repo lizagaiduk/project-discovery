@@ -19,60 +19,42 @@ st.markdown("""
         box-sizing: border-box;
     }
     
-    /* Light and Dark Mode Support */
-    :root {
-        color-scheme: light dark;
-    }
-    
     @media (prefers-color-scheme: light) {
         :root {
-            --bg-primary: #fafafa;
-            --bg-secondary: #ffffff;
-            --text-primary: #1a1a1a;
-            --text-secondary: #666;
-            --text-tertiary: #999;
-            --border-color: #e8e8e8;
-            --border-light: #f0f0f0;
-            --header-gradient: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --text-light: #666;
             --button-bg: #1a1a1a;
-            --button-hover: #333333;
-            --card-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08);
-            --link-color: #0066cc;
+            --button-text: #ffffff;
+            --link: #0066cc;
         }
     }
     
     @media (prefers-color-scheme: dark) {
         :root {
-            --bg-primary: #0f0f0f;
-            --bg-secondary: #1a1a1a;
-            --text-primary: #e8e8e8;
-            --text-secondary: #b0b0b0;
-            --text-tertiary: #888;
-            --border-color: #333333;
-            --border-light: #2a2a2a;
-            --header-gradient: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-            --button-bg: #e8e8e8;
-            --button-hover: #d0d0d0;
-            --card-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.5);
-            --link-color: #4da6ff;
+            --bg: #000000;
+            --text: #ffffff;
+            --text-light: #ccc;
+            --button-bg: #ffffff;
+            --button-text: #000000;
+            --link: #66b3ff;
         }
     }
     
     html, body {
-        background: var(--bg-primary);
-        color: var(--text-primary);
+        background: var(--bg);
+        color: var(--text);
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;
     }
     
     .main {
-        background: var(--bg-primary);
+        background: var(--bg);
         padding: 0 !important;
     }
     
     [data-testid="stAppViewContainer"] {
         padding: 0 !important;
+        background: var(--bg);
     }
     
     [data-testid="stHeader"] {
@@ -85,29 +67,26 @@ st.markdown("""
     }
     
     .header {
-        background: var(--header-gradient);
-        padding: 48px 24px 32px;
-        border-bottom: 1px solid var(--border-color);
+        padding: 60px 20px 40px;
         text-align: center;
     }
     
     .header-title {
-        font-size: 32px;
+        font-size: 36px;
         font-weight: 700;
-        color: var(--text-primary);
-        margin: 0 0 12px 0;
-        letter-spacing: -0.5px;
+        color: var(--text);
+        margin: 0 0 16px 0;
     }
     
     .header-subtitle {
-        font-size: 14px;
-        color: var(--text-secondary);
+        font-size: 16px;
+        color: var(--text-light);
         font-weight: 400;
         margin: 0;
     }
     
     .container {
-        padding: 20px;
+        padding: 0 20px 40px;
         max-width: 800px;
         margin: 0 auto;
     }
@@ -116,159 +95,128 @@ st.markdown("""
         width: 100% !important;
         padding: 16px 24px !important;
         background: var(--button-bg) !important;
-        color: var(--bg-primary) !important;
+        color: var(--button-text) !important;
         border: none !important;
-        border-radius: 8px !important;
+        border-radius: 6px !important;
         font-size: 15px !important;
         font-weight: 600 !important;
-        margin: 24px 0 !important;
-        letter-spacing: 0.3px;
+        margin: 32px 0 !important;
         cursor: pointer;
     }
     
     .stButton > button:hover {
-        background: var(--button-hover) !important;
+        opacity: 0.9;
     }
     
-    .stButton > button:active {
-        transform: scale(0.98);
+    .project-item {
+        padding: 24px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
     }
     
-    .project-card {
-        background: var(--bg-secondary);
-        border-radius: 12px;
-        padding: 20px;
-        margin: 12px 0;
-        border: 1px solid var(--border-color);
-        box-shadow: var(--card-shadow);
-        transition: all 0.2s ease;
+    @media (prefers-color-scheme: dark) {
+        .project-item {
+            border-bottom-color: rgba(255,255,255,0.1);
+        }
     }
     
-    .project-card:hover {
-        border-color: var(--text-tertiary);
-        box-shadow: var(--card-shadow-hover);
+    .project-item:last-child {
+        border-bottom: none;
     }
     
-    .project-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 12px;
-        gap: 12px;
+    .project-number {
+        font-size: 14px;
+        color: var(--text-light);
+        margin-bottom: 8px;
     }
     
     .project-title {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 700;
-        color: var(--text-primary);
-        line-height: 1.3;
-        flex: 1;
-    }
-    
-    .project-score {
-        font-size: 22px;
-        font-weight: 700;
-        color: var(--text-primary);
-        flex-shrink: 0;
+        color: var(--text);
+        margin-bottom: 8px;
     }
     
     .project-category {
         display: inline-block;
-        background: var(--border-light);
-        padding: 5px 10px;
-        border-radius: 4px;
         font-size: 11px;
         font-weight: 600;
-        color: var(--text-secondary);
-        margin-bottom: 10px;
+        color: var(--text-light);
+        margin-bottom: 12px;
         text-transform: uppercase;
-        letter-spacing: 0.3px;
     }
     
     .project-description {
         font-size: 14px;
-        color: var(--text-secondary);
-        line-height: 1.5;
-        margin: 10px 0;
+        color: var(--text-light);
+        line-height: 1.6;
+        margin: 12px 0;
     }
     
-    .project-link-section {
+    .project-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-top: 12px;
-        padding-top: 12px;
-        border-top: 1px solid var(--border-light);
+        font-size: 12px;
+        color: var(--text-light);
     }
     
     .project-link {
-        color: var(--link-color);
+        color: var(--link);
         text-decoration: none;
-        font-weight: 600;
-        font-size: 13px;
-        word-break: break-all;
-        display: inline-block;
-        max-width: 100%;
+        font-weight: 500;
     }
     
     .project-link:hover {
         text-decoration: underline;
     }
     
-    .project-meta {
-        font-size: 12px;
-        color: var(--text-tertiary);
-        margin-top: 8px;
-    }
-    
-    .stats-box {
-        background: var(--bg-secondary);
-        padding: 28px 20px;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        text-align: center;
-        margin: 28px 0;
-        box-shadow: var(--card-shadow);
-    }
-    
-    .stats-number {
-        font-size: 36px;
+    .project-score {
+        font-size: 16px;
         font-weight: 700;
-        color: var(--text-primary);
-    }
-    
-    .stats-label {
-        font-size: 13px;
-        color: var(--text-secondary);
-        margin-top: 8px;
-        letter-spacing: 0.3px;
-    }
-    
-    .divider {
-        height: 1px;
-        background: var(--border-color);
-        margin: 24px 0;
+        color: var(--text);
     }
     
     .section-title {
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 700;
-        color: var(--text-primary);
-        margin: 24px 0 16px 0;
+        color: var(--text);
+        margin: 40px 0 24px 0;
+    }
+    
+    .stats {
+        text-align: center;
+        padding: 40px 0;
+    }
+    
+    .stats-number {
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--text);
+    }
+    
+    .stats-label {
+        font-size: 14px;
+        color: var(--text-light);
+        margin-top: 12px;
     }
     
     [data-testid="stSidebar"] {
-        background: var(--bg-secondary);
+        background: var(--bg);
     }
     
     .stTextInput > div > div > input {
-        border: 1px solid var(--border-color) !important;
+        border: 1px solid var(--text-light) !important;
         border-radius: 6px !important;
         padding: 10px 12px !important;
         font-size: 14px !important;
-        background: var(--bg-secondary) !important;
-        color: var(--text-primary) !important;
+        background: var(--bg) !important;
+        color: var(--text) !important;
     }
     
-    .stSpinner {
-        text-align: center;
+    .stError, .stWarning {
+        background: transparent !important;
+        color: var(--text) !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -329,8 +277,6 @@ if 'loading' in st.session_state and st.session_state.loading:
                             })
                 except:
                     pass
-            
-            st.markdown(f"<p style='text-align: center; color: var(--text-tertiary); font-size: 13px;'>Analyzing {len(articles)} articles...</p>", unsafe_allow_html=True)
             
             if not articles:
                 st.error("No articles found")
@@ -395,8 +341,6 @@ Return JSON:
                 
                 progress_bar.progress((idx + 1) / 60)
             
-            st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
-            
             if projects:
                 sorted_projects = sorted(
                     projects.items(),
@@ -412,24 +356,20 @@ Return JSON:
                     date = info.get('published', 'Recently')[:10]
                     
                     st.markdown(f"""
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div>
-                                <span class="project-category">{category}</span>
-                                <div class="project-title">{idx}. {name}</div>
-                            </div>
-                            <div class="project-score">{vibe}</div>
-                        </div>
+                    <div class="project-item">
+                        <div class="project-number">#{idx}</div>
+                        <div class="project-category">{category}</div>
+                        <div class="project-title">{name}</div>
                         <div class="project-description">{info['description']}</div>
-                        <div class="project-link-section">
-                            <a href="{info['link']}" target="_blank" class="project-link">View Project</a>
-                            <div class="project-meta">{date} • {info['source']}</div>
+                        <div class="project-meta">
+                            <a href="{info['link']}" target="_blank" class="project-link">View</a>
+                            <span>{date} • {info['source']} • Score: <span class="project-score">{vibe}</span></span>
                         </div>
                     </div>
                     """, unsafe_allow_html=True)
                 
                 st.markdown(f"""
-                <div class="stats-box">
+                <div class="stats">
                     <div class="stats-number">{len(sorted_projects)}</div>
                     <div class="stats-label">Fresh projects discovered</div>
                 </div>
