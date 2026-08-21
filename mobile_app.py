@@ -19,42 +19,20 @@ st.markdown("""
         box-sizing: border-box;
     }
     
-    @media (prefers-color-scheme: light) {
-        :root {
-            --bg: #ffffff;
-            --text: #1a1a1a;
-            --text-light: #666;
-            --button-bg: #1a1a1a;
-            --button-text: #ffffff;
-            --link: #0066cc;
-        }
-    }
-    
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --bg: #000000;
-            --text: #ffffff;
-            --text-light: #ccc;
-            --button-bg: #ffffff;
-            --button-text: #000000;
-            --link: #66b3ff;
-        }
-    }
-    
     html, body {
-        background: var(--bg);
-        color: var(--text);
+        background: #f5f5f5;
+        color: #1a1a1a;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;
     }
     
     .main {
-        background: var(--bg);
+        background: #f5f5f5;
         padding: 0 !important;
     }
     
     [data-testid="stAppViewContainer"] {
         padding: 0 !important;
-        background: var(--bg);
+        background: #f5f5f5;
     }
     
     [data-testid="stHeader"] {
@@ -74,15 +52,17 @@ st.markdown("""
     .header-title {
         font-size: 36px;
         font-weight: 700;
-        color: var(--text);
+        color: #ff8800;
         margin: 0 0 16px 0;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
     
     .header-subtitle {
         font-size: 16px;
-        color: var(--text-light);
+        color: #ff8800;
         font-weight: 400;
         margin: 0;
+        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
     }
     
     .container {
@@ -94,8 +74,8 @@ st.markdown("""
     .stButton > button {
         width: 100% !important;
         padding: 16px 24px !important;
-        background: var(--button-bg) !important;
-        color: var(--button-text) !important;
+        background: #1a1a1a !important;
+        color: #ffffff !important;
         border: none !important;
         border-radius: 6px !important;
         font-size: 15px !important;
@@ -113,41 +93,39 @@ st.markdown("""
         border-bottom: 1px solid rgba(0,0,0,0.1);
     }
     
-    @media (prefers-color-scheme: dark) {
-        .project-item {
-            border-bottom-color: rgba(255,255,255,0.1);
-        }
-    }
-    
     .project-item:last-child {
         border-bottom: none;
     }
     
     .project-number {
         font-size: 14px;
-        color: var(--text-light);
+        color: #ff8800;
         margin-bottom: 8px;
+        font-weight: 600;
+        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
     }
     
     .project-title {
         font-size: 18px;
         font-weight: 700;
-        color: var(--text);
+        color: #ff8800;
         margin-bottom: 8px;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
     
     .project-category {
         display: inline-block;
         font-size: 11px;
-        font-weight: 600;
-        color: var(--text-light);
+        font-weight: 700;
+        color: #ff8800;
         margin-bottom: 12px;
         text-transform: uppercase;
+        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
     }
     
     .project-description {
         font-size: 14px;
-        color: var(--text-light);
+        color: #1a1a1a;
         line-height: 1.6;
         margin: 12px 0;
     }
@@ -158,13 +136,14 @@ st.markdown("""
         align-items: center;
         margin-top: 12px;
         font-size: 12px;
-        color: var(--text-light);
+        color: #1a1a1a;
     }
     
     .project-link {
-        color: var(--link);
+        color: #ff8800;
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 600;
+        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
     }
     
     .project-link:hover {
@@ -174,14 +153,16 @@ st.markdown("""
     .project-score {
         font-size: 16px;
         font-weight: 700;
-        color: var(--text);
+        color: #ff8800;
+        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
     }
     
     .section-title {
         font-size: 24px;
         font-weight: 700;
-        color: var(--text);
+        color: #ff8800;
         margin: 40px 0 24px 0;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
     
     .stats {
@@ -192,31 +173,41 @@ st.markdown("""
     .stats-number {
         font-size: 48px;
         font-weight: 700;
-        color: var(--text);
+        color: #ff8800;
+        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
     }
     
     .stats-label {
         font-size: 14px;
-        color: var(--text-light);
+        color: #ff8800;
         margin-top: 12px;
+        font-weight: 600;
+        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
     }
     
     [data-testid="stSidebar"] {
-        background: var(--bg);
+        background: #f5f5f5;
     }
     
     .stTextInput > div > div > input {
-        border: 1px solid var(--text-light) !important;
-        border-radius: 6px !important;
-        padding: 10px 12px !important;
+        border: none !important;
+        background: transparent !important;
+        color: #ff8800 !important;
         font-size: 14px !important;
-        background: var(--bg) !important;
-        color: var(--text) !important;
+        padding: 0 !important;
+        border-bottom: 2px solid #ff8800 !important;
+        border-radius: 0 !important;
+        font-weight: 600;
+    }
+    
+    .stTextInput > div > div > input::placeholder {
+        color: #ff8800 !important;
+        opacity: 0.6 !important;
     }
     
     .stError, .stWarning {
         background: transparent !important;
-        color: var(--text) !important;
+        color: #1a1a1a !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -239,7 +230,6 @@ with st.sidebar:
         placeholder="sk-ant-...",
         label_visibility="collapsed"
     )
-    st.caption("Get from console.anthropic.com")
 
 col1, col2, col3 = st.columns([0.5, 1, 0.5])
 with col2:
