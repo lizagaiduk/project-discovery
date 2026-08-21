@@ -20,19 +20,16 @@ st.markdown("""
     }
     
     html, body {
-        background: #f5f5f5;
         color: #1a1a1a;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;
     }
     
     .main {
-        background: #f5f5f5;
         padding: 0 !important;
     }
     
     [data-testid="stAppViewContainer"] {
         padding: 0 !important;
-        background: #f5f5f5;
     }
     
     [data-testid="stHeader"] {
@@ -54,7 +51,6 @@ st.markdown("""
         font-weight: 700;
         color: #ff8800;
         margin: 0 0 16px 0;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
     
     .header-subtitle {
@@ -62,7 +58,6 @@ st.markdown("""
         color: #ff8800;
         font-weight: 400;
         margin: 0;
-        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
     }
     
     .container {
@@ -102,7 +97,6 @@ st.markdown("""
         color: #ff8800;
         margin-bottom: 8px;
         font-weight: 600;
-        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
     }
     
     .project-title {
@@ -110,7 +104,6 @@ st.markdown("""
         font-weight: 700;
         color: #ff8800;
         margin-bottom: 8px;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
     
     .project-category {
@@ -120,7 +113,6 @@ st.markdown("""
         color: #ff8800;
         margin-bottom: 12px;
         text-transform: uppercase;
-        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
     }
     
     .project-description {
@@ -143,7 +135,6 @@ st.markdown("""
         color: #ff8800;
         text-decoration: none;
         font-weight: 600;
-        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
     }
     
     .project-link:hover {
@@ -154,7 +145,6 @@ st.markdown("""
         font-size: 16px;
         font-weight: 700;
         color: #ff8800;
-        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
     }
     
     .section-title {
@@ -162,7 +152,6 @@ st.markdown("""
         font-weight: 700;
         color: #ff8800;
         margin: 40px 0 24px 0;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
     
     .stats {
@@ -174,7 +163,6 @@ st.markdown("""
         font-size: 48px;
         font-weight: 700;
         color: #ff8800;
-        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
     }
     
     .stats-label {
@@ -182,11 +170,10 @@ st.markdown("""
         color: #ff8800;
         margin-top: 12px;
         font-weight: 600;
-        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
     }
     
     [data-testid="stSidebar"] {
-        background: #f5f5f5;
+        background: transparent;
     }
     
     .stTextInput > div > div > input {
