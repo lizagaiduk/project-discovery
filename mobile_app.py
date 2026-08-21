@@ -19,14 +19,55 @@ st.markdown("""
         box-sizing: border-box;
     }
     
+    /* Light and Dark Mode Support */
+    :root {
+        color-scheme: light dark;
+    }
+    
+    @media (prefers-color-scheme: light) {
+        :root {
+            --bg-primary: #fafafa;
+            --bg-secondary: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666;
+            --text-tertiary: #999;
+            --border-color: #e8e8e8;
+            --border-light: #f0f0f0;
+            --header-gradient: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            --button-bg: #1a1a1a;
+            --button-hover: #333333;
+            --card-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08);
+            --link-color: #0066cc;
+        }
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1a1a1a;
+            --text-primary: #e8e8e8;
+            --text-secondary: #b0b0b0;
+            --text-tertiary: #888;
+            --border-color: #333333;
+            --border-light: #2a2a2a;
+            --header-gradient: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            --button-bg: #e8e8e8;
+            --button-hover: #d0d0d0;
+            --card-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.5);
+            --link-color: #4da6ff;
+        }
+    }
+    
     html, body {
-        background: #fafafa;
-        color: #1a1a1a;
+        background: var(--bg-primary);
+        color: var(--text-primary);
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;
     }
     
     .main {
-        background: #fafafa;
+        background: var(--bg-primary);
         padding: 0 !important;
     }
     
@@ -44,23 +85,23 @@ st.markdown("""
     }
     
     .header {
-        background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+        background: var(--header-gradient);
         padding: 48px 24px 32px;
-        border-bottom: 1px solid #e8e8e8;
+        border-bottom: 1px solid var(--border-color);
         text-align: center;
     }
     
     .header-title {
         font-size: 32px;
         font-weight: 700;
-        color: #1a1a1a;
+        color: var(--text-primary);
         margin: 0 0 12px 0;
         letter-spacing: -0.5px;
     }
     
     .header-subtitle {
         font-size: 14px;
-        color: #888;
+        color: var(--text-secondary);
         font-weight: 400;
         margin: 0;
     }
@@ -74,8 +115,8 @@ st.markdown("""
     .stButton > button {
         width: 100% !important;
         padding: 16px 24px !important;
-        background: #1a1a1a !important;
-        color: white !important;
+        background: var(--button-bg) !important;
+        color: var(--bg-primary) !important;
         border: none !important;
         border-radius: 8px !important;
         font-size: 15px !important;
@@ -86,7 +127,7 @@ st.markdown("""
     }
     
     .stButton > button:hover {
-        background: #333333 !important;
+        background: var(--button-hover) !important;
     }
     
     .stButton > button:active {
@@ -94,18 +135,18 @@ st.markdown("""
     }
     
     .project-card {
-        background: #ffffff;
+        background: var(--bg-secondary);
         border-radius: 12px;
         padding: 20px;
         margin: 12px 0;
-        border: 1px solid #e8e8e8;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--card-shadow);
         transition: all 0.2s ease;
     }
     
     .project-card:hover {
-        border-color: #d0d0d0;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        border-color: var(--text-tertiary);
+        box-shadow: var(--card-shadow-hover);
     }
     
     .project-header {
@@ -119,7 +160,7 @@ st.markdown("""
     .project-title {
         font-size: 16px;
         font-weight: 700;
-        color: #1a1a1a;
+        color: var(--text-primary);
         line-height: 1.3;
         flex: 1;
     }
@@ -127,18 +168,18 @@ st.markdown("""
     .project-score {
         font-size: 22px;
         font-weight: 700;
-        color: #1a1a1a;
+        color: var(--text-primary);
         flex-shrink: 0;
     }
     
     .project-category {
         display: inline-block;
-        background: #f0f0f0;
+        background: var(--border-light);
         padding: 5px 10px;
         border-radius: 4px;
         font-size: 11px;
         font-weight: 600;
-        color: #666;
+        color: var(--text-secondary);
         margin-bottom: 10px;
         text-transform: uppercase;
         letter-spacing: 0.3px;
@@ -146,7 +187,7 @@ st.markdown("""
     
     .project-description {
         font-size: 14px;
-        color: #555;
+        color: var(--text-secondary);
         line-height: 1.5;
         margin: 10px 0;
     }
@@ -154,11 +195,11 @@ st.markdown("""
     .project-link-section {
         margin-top: 12px;
         padding-top: 12px;
-        border-top: 1px solid #f0f0f0;
+        border-top: 1px solid var(--border-light);
     }
     
     .project-link {
-        color: #0066cc;
+        color: var(--link-color);
         text-decoration: none;
         font-weight: 600;
         font-size: 13px;
@@ -173,55 +214,57 @@ st.markdown("""
     
     .project-meta {
         font-size: 12px;
-        color: #999;
+        color: var(--text-tertiary);
         margin-top: 8px;
     }
     
     .stats-box {
-        background: #ffffff;
+        background: var(--bg-secondary);
         padding: 28px 20px;
         border-radius: 12px;
-        border: 1px solid #e8e8e8;
+        border: 1px solid var(--border-color);
         text-align: center;
         margin: 28px 0;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        box-shadow: var(--card-shadow);
     }
     
     .stats-number {
         font-size: 36px;
         font-weight: 700;
-        color: #1a1a1a;
+        color: var(--text-primary);
     }
     
     .stats-label {
         font-size: 13px;
-        color: #888;
+        color: var(--text-secondary);
         margin-top: 8px;
         letter-spacing: 0.3px;
     }
     
     .divider {
         height: 1px;
-        background: #e8e8e8;
+        background: var(--border-color);
         margin: 24px 0;
     }
     
     .section-title {
         font-size: 20px;
         font-weight: 700;
-        color: #1a1a1a;
+        color: var(--text-primary);
         margin: 24px 0 16px 0;
     }
     
     [data-testid="stSidebar"] {
-        background: #ffffff;
+        background: var(--bg-secondary);
     }
     
     .stTextInput > div > div > input {
-        border: 1px solid #e8e8e8 !important;
+        border: 1px solid var(--border-color) !important;
         border-radius: 6px !important;
         padding: 10px 12px !important;
         font-size: 14px !important;
+        background: var(--bg-secondary) !important;
+        color: var(--text-primary) !important;
     }
     
     .stSpinner {
@@ -287,7 +330,7 @@ if 'loading' in st.session_state and st.session_state.loading:
                 except:
                     pass
             
-            st.markdown(f"<p style='text-align: center; color: #999; font-size: 13px;'>Analyzing {len(articles)} articles...</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align: center; color: var(--text-tertiary); font-size: 13px;'>Analyzing {len(articles)} articles...</p>", unsafe_allow_html=True)
             
             if not articles:
                 st.error("No articles found")
